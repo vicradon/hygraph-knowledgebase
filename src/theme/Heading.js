@@ -1,6 +1,6 @@
 // You can also use the more specific type for
 // a single part component: ComponentSingleStyleConfig
-export const Heading = {
+const Heading = {
   // The styles all button have in common
   baseStyle: {},
   // Two sizes: sm and md
@@ -38,3 +38,5 @@ export const Heading = {
     size: "md",
   },
 };
+
+export default Heading;

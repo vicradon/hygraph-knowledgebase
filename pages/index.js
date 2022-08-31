@@ -104,7 +104,7 @@ export default function Home({ articles = [], faqs = [] }) {
               paddingY={"1rem"}
             >
               <CgFileDocument />
-              <NextLink href="/" passHref>
+              <NextLink href={`/articles/${article.slug}`} passHref>
                 <Link fontSize={"lg"}>{article.title}</Link>
               </NextLink>
             </Flex>
@@ -150,7 +150,6 @@ export const getStaticProps = async () => {
       },
     };
   } catch (error) {
-    console.log(error);
     return { props: {} };
   }
 };
