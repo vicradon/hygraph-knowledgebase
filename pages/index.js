@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Flex,
   Heading,
   Accordion,
@@ -8,13 +7,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Text,
-  Image,
-  Grid,
-  GridItem,
-  Center,
   FormControl,
-  FormLabel,
   Input,
   Link,
 } from "@chakra-ui/react";
@@ -140,7 +133,9 @@ export default function Home({ articles = [], faqs = [] }) {
 
 export const getStaticProps = async () => {
   try {
-    const { articles } = await client.request(GET_ARTICLES);
+    const { articles } = await client.request(GET_ARTICLES, {
+      searchQuery: "",
+    });
     const { faqs } = await client.request(GET_FAQS);
 
     return {
